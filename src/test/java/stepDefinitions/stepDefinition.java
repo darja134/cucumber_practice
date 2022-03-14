@@ -47,37 +47,5 @@ public class stepDefinition {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div[1]/div/div/div/div[1]/div")));
         driver.quit();
     }
-    //Scenario 2
-    @Given("User opens to phptravel home page")
-    public void user_opens_to_phptravel_home_page() {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/drivers/chromedriver.exe");
-        driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, 10);
-        driver.get("https://phptravels.com");
-    }
-    @When("User press Login button")
-    public void user_press_login_button() {
-        By LoginButton = By.xpath("/html/body/header/div/nav/a[4]");
-        driver.findElement(LoginButton).click();
-        // switching tabs
-        ArrayList<String> tabs3 = new ArrayList<String> (driver.getWindowHandles());
-        driver.switchTo().window(tabs3.get(1));
-        driver.close();
-        driver.switchTo().window(tabs3.get(0));
-    }
-    @When("User fills login details")
-    public void user_fills_login_details() {
-        String Email = "daria@test.net";
-        String Password = "12345";
-        driver.get("https://phptravels.org/login");
-        driver.findElement(By.id("inputEmail")).sendKeys(Email);
-        driver.findElement(By.id("inputPassword")).sendKeys(Password);
-        driver.findElement(By.id("login")).click();
-    }
-    @Then("User cannot login without captcha")
-    public void user_cannot_login_without_captcha() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/div[2]/div[1]/div/div/div/div[1]/div")));
-        driver.quit();
-    }
 
 }
