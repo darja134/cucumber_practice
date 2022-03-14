@@ -30,9 +30,9 @@ public class stepDefinition {
     public void user_fills_in_registration_form_and_press_register_button() {
         String password = "password123";
         driver.get("https://phptravels.org/register.php");
-        driver.findElement(By.id("inputFirstName")).sendKeys(RandomStringUtils.randomAlphabetic(8));
-        driver.findElement(By.id("inputLastName")).sendKeys(RandomStringUtils.randomAlphabetic(8));
-        driver.findElement(By.id("inputEmail")).sendKeys(RandomStringUtils.randomAlphanumeric(5) + "@test.ru");
+        driver.findElement(By.id("inputFirstName")).sendKeys(RandomStringUtils.randomAlphabetic(7));
+        driver.findElement(By.id("inputLastName")).sendKeys(RandomStringUtils.randomAlphabetic(7));
+        driver.findElement(By.id("inputEmail")).sendKeys(RandomStringUtils.randomAlphanumeric(7) + "@test.ru");
         driver.findElement(By.id("inputPhone")).sendKeys(RandomStringUtils.randomNumeric(10));
         driver.findElement(By.id("inputAddress1")).sendKeys(RandomStringUtils.randomAlphabetic(6));
         driver.findElement(By.id("inputAddress2")).sendKeys(RandomStringUtils.randomNumeric(3));
