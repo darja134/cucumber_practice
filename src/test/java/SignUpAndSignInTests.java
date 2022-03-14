@@ -6,5 +6,5 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = {"src/test/resource/Login.feature"},
         glue = {"stepDefinitions"}, stepNotifications = true)
-public class TestRunner {
+public class SignUpAndSignInTests {
 }
